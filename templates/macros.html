@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {%macro render_dict(dictionary)%}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Comments</th>
+        </tr>
+        {%for key,value in dictionary.items()%}
+        <tr>
+            <td>{{key}}</td>
+          /usr/bin/python  <td>{{value}}</td>
+            {%if value<=2%}
+                <td>short</td>
+            {%elif value>=2 and value<=3%}
+                <td>short</td>
+            {%else%}
+                <td>Long</td>
+            {%endif%}
+        </tr>
+        {%endfor%}
+    </table>
+    {%endmacro%}
+</body>
+
+</html>

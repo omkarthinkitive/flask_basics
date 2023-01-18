@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for ('static',filename='css/style.css')}}">
+    <title>Movies</title>
+</head>
+
+<body>
+    {%for movie,length in movies|dictsort(false,'value')%}
+    <ul>
+        <li>
+            {{movie|title}}:{{length|round(1)}}
+        </li>
+    </ul>
+    {%endfor%}
+
+    <hr>
+    
+    <ul>
+        <li>
+            Capital case:{{film|title}}
+        </li>
+        <br>
+        <li>
+            Length:{{movies|length}}
+        </li>
+        <br>
+        <li>
+            First Film:{{movies|first}}
+        </li>
+    </ul>
+</body>
+
+</html>
